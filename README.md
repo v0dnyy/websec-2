@@ -20,16 +20,22 @@
 
 4. Установить необходимые пакеты в терминале:
     -- pip install re
+   
     -- pip install requests
+   
     -- pip install bs4
+   
     -- pip install datetime
+   
     -- pip install json
+   
     -- pip install flask
 
-5. Открываем server_side.py в проекте и запускаем(в консоле отобразиться хост)
+
+6. Открываем server_side.py в проекте и запускаем(в консоле отобразиться хост)
    <img width="720" alt="image" src="https://github.com/v0dnyy/websec-2/assets/92549113/e1c34afa-0781-406e-a11a-9f9cc277a790">
 
-6. Переходим на http://127.0.0.1:5000/
+7. Переходим на http://127.0.0.1:5000/
 
 
 
