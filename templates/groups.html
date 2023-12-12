@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block links %}
+    <link rel="stylesheet" href="../static/style.css">
+{% endblock %}
+
+{% block title %}
+    Группы
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>{{faculty}}</h2>
+    <h3> Список групп </h3>
+    {% for group in groups %}
+    <a class="group-link" href="{{group.link}}">{{group.number}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
