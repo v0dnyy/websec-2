@@ -19,6 +19,7 @@
 3. Открыть папку с помощью pycharm
 
 4. Установить необходимые пакеты в терминале:
+   
     pip install re
    
     pip install requests
