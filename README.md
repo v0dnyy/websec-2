@@ -19,17 +19,17 @@
 3. Открыть папку с помощью pycharm
 
 4. Установить необходимые пакеты в терминале:
-    -- pip install re
+    pip install re
    
-    -- pip install requests
+    pip install requests
    
-    -- pip install bs4
+    pip install bs4
    
-    -- pip install datetime
+    pip install datetime
    
-    -- pip install json
+    pip install json
    
-    -- pip install flask
+    pip install flask
 
 
 6. Открываем server_side.py в проекте и запускаем(в консоле отобразиться хост)
