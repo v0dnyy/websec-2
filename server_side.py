@@ -103,6 +103,6 @@ def schedule_page():
 
 
 if __name__ == "__main__":
-    # parse_group_list()
-    # parse_staff_list()
+    parse_group_list()
+    parse_staff_list()
     app.run(debug=True)
