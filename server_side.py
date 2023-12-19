@@ -89,16 +89,23 @@ def schedule_page():
     if group_id and group_id != "":
         url = f"https://ssau.ru/rasp?groupId={group_id}&selectedWeek={week}&selectedWeekday=1"
         type = "groupId"
+        parse_schedule(url)
+        with open("schedule.json", "r", encoding='utf-8') as file:
+            data = load(file)
+        owner = list(data.keys())[0]
+        data["weeks"] = [week - 1, week, week + 1]
+        data["weeks_links"] = [f"/rasp?{type}={group_id}&selectedWeek={week - 1}&selectedWeekday=1",
+                               f"/rasp?{type}={group_id}&selectedWeek={week + 1}&selectedWeekday=1"]
     elif staff_id and staff_id != "":
         url = f"https://ssau.ru/rasp?staffId={staff_id}&selectedWeek={week}&selectedWeekday=1"
         type = "staffId"
-    parse_schedule(url)
-    with open("schedule.json", "r", encoding='utf-8') as file:
-        data = load(file)
-    owner = list(data.keys())[0]
-    data["weeks"] = [week - 1, week, week + 1]
-    data["weeks_links"] = [f"/rasp?{type}={group_id}&selectedWeek={week - 1}&selectedWeekday=1",
-                           f"/rasp?{type}={group_id}&selectedWeek={week + 1}&selectedWeekday=1"]
+        parse_schedule(url)
+        with open("schedule.json", "r", encoding='utf-8') as file:
+            data = load(file)
+        owner = list(data.keys())[0]
+        data["weeks"] = [week - 1, week, week + 1]
+        data["weeks_links"] = [f"/rasp?{type}={staff_id}&selectedWeek={week - 1}&selectedWeekday=1",
+                               f"/rasp?{type}={staff_id}&selectedWeek={week + 1}&selectedWeekday=1"]
     return render_template("schedule.html", owner=owner, schedule=data[owner], data=data)
 
 
