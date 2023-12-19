@@ -32,9 +32,9 @@ def main_page():
     if search_request and search_request != "":
         found = search(search_request)
         if found != {}:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
         else:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
     with open("groups.json", "r", encoding='utf-8') as file:
         data = load(file)
     faculties = []
@@ -50,9 +50,9 @@ def faculty_page(id):
     if search_request and search_request != "":
         found = search(search_request)
         if found != {}:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
         else:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
     with open("groups.json", "r", encoding='utf-8') as file:
         data = load(file)
     groups_raw = {}
@@ -74,9 +74,9 @@ def schedule_page():
     if search_request and search_request != "":
         found = search(search_request)
         if found != {}:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
         else:
-            return render_template("found_items.html", found=found)
+            return render_template("search_result.html", found=found)
     selected_week = request.args.get('selectedWeek')
     group_id = request.args.get('groupId')
     staff_id = request.args.get('staffId')
@@ -103,6 +103,6 @@ def schedule_page():
 
 
 if __name__ == "__main__":
-    parse_group_list()
-    parse_staff_list()
+    # parse_group_list()
+    # parse_staff_list()
     app.run(debug=True)
