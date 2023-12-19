@@ -7,13 +7,13 @@ from json import dump
 
 
 def parse_current_week():
-    page = requests.get("https://ssau.ru/rasp?groupId=531873998&selectedWeek=1&selectedWeekday=1")
+    page = requests.get("https://ssau.ru/rasp?groupId=531030143&selectedWeek=1&selectedWeekday=1")
     soup = BeautifulSoup(page.text, "html.parser")
     first_date = soup.find("div", class_="week-nav-current_date").get_text(strip=True)
     first_date = datetime.strptime(first_date, '%d.%m.%Y').date()
     current_date = date.today()
     difference = current_date - first_date
-    return int(difference.days/7)
+    return round(difference.days/7)+1
 
 
 def pasr_lesson(lesson_raw):
